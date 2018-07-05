@@ -1,56 +1,42 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Image Slider</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Multiplication Table</title>
+    <script type="text/javascript">
 
-    <script>
-        
-        //Put src in here and choose how many
-            var images = ["http://hintergrundbild.org/wallpaper/full/2/b/2/145-large-4k-wallpapers-3840x2160-screen.jpg",
-            "http://www.wallpaperspots.com/wp-content/uploads/2014/04/hd-nature-wallpaper-for-pc.jpg",
-            "http://www.technocrazed.com/wp-content/uploads/2015/12/Landscape-wallpaper-8.jpg"];
+        var rows = prompt("How many rows?");
+        var cols = prompt("How many columns?");
+        if (rows == "" || rows == null)
+            rows = 10;
+        if (cols == "" || cols == null)
+            cols = 10;
+        createTable(rows, cols);
 
-        var counter = 0;
-
-        function next() {
-            var slider = document.getElementById("slider");
-            counter++;
-            if (counter >= images.length) {
-                counter = 0;
+        function createTable(rows, cols) {
+            var j = 1;
+            var output = "<table border='1' width='300' cellspacing='0'cellpadding='3'>";
+            for (i = 1; i <= rows; i++) {
+                output = output + "<tr>";
+                while (j <= cols) {
+                    output = output + "<td>" + i * j + "</td>";
+                    j = j + 1;
+                }
+                output = output + "</tr>";
+                j = 1;
             }
-            slider.src = images[counter];
-        }
+            output = output + "</table>";
+            document.write(output);
 
-        function prev() {
-            var slider = document.getElementById("slider");
-            counter--;
-            if (counter < 0) {
-                counter = images.length - 1;
-            }
-            slider.src = images[counter];
         }
     </script>
-
 </head>
 
 <body>
-
-    <div>
-        <h1>Image Slider</h1>
-    </div>
-
-    <div class="push">
-        <img id="slider" src="http://hintergrundbild.org/wallpaper/full/2/b/2/145-large-4k-wallpapers-3840x2160-screen.jpg" alt="" width="100%" height="100%">
-            <button onclick="prev()">Prev</button>
-            <button onclick="next()">Next</button>
-    </div>
 
 </body>
 
