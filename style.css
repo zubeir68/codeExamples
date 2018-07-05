@@ -1,0 +1,27 @@
+body{
+    background-color: #82E0AA;
+}
+h1{
+    text-align: center;
+    font-family: 'Shrikhand';
+    font-size: 50px;
+}
+
+button{
+    border-style: solid;
+    text-align: center;
+    transition: 1s;
+    background-color:#2E4975;
+    border-color: #2E4975;
+    font-family: 'Montserrat', sans-serif;
+    color:  white;
+    font-size: 30px;
+}
+
+img{
+    
+}
+
+.push{
+    margin: 15px, 15px, 15px, 15px;
+}
